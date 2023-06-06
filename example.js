@@ -1,8 +1,16 @@
+const querystring = require("querystring");
+const { Curl } = require("node-libcurl");
+const terminate = curlTest.close.bind(curlTest);
+
+
 const vrchat = require("vrchat");
+
 const configuration = new vrchat.Configuration({
-    username: "username",
-    password: "password"
+    username: "PossiumxMini",
+    password: "ujswdfcvrploamnsdeft"
 });
+
+
 
 const AuthenticationApi = new vrchat.AuthenticationApi(configuration);
 const UsersApi = new vrchat.UsersApi(configuration);
@@ -15,7 +23,7 @@ SystemApi.getCurrentOnlineUsers().then(resp => {
     AuthenticationApi.getCurrentUser().then(resp => {
         console.log(`Logged in as: ${resp.data.displayName}`);
 
-        UsersApi.getUser("usr_c1644b5b-3ca4-45b4-97c6-a2a0de70d469").then(resp => {
+        UsersApi.getUser("usr_5099020d-1ca7-4743-b312-5d6f28fc877a").then(resp => {
             console.log(resp.data.displayName); // Should print out "tupper"
         });
     });
